@@ -8,3 +8,7 @@
 @time: 2021/6/24 0024 17:12
 @desc:
 '''
+import os
+
+# 获取项目根路径
+BASE_PATH = os.path.abspath(os.path.join(os.path.dirname(__file__), "../")).replace(r'\/'.replace(os.sep, ''), os.sep)
