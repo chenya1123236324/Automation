@@ -35,6 +35,15 @@ class ApiRequest:
         return self.request(url, method, data, **kwargs)
 
     def request(self, url, method, data=None, json=None, **kwargs):
+        """
+        封装访问请求
+        :param url:
+        :param method:
+        :param data:
+        :param json:
+        :param kwargs:
+        :return:
+        """
         url = self.url + url
         if "herders" in kwargs:
             self.variables["herders"] = kwargs.get("herders")
