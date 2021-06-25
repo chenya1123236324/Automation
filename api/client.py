@@ -20,10 +20,10 @@ class ApiRequest:
         self.session = requests.session()
 
     def get(self, url, method='GET', **kwargs):
-        return self.request(url, method, **kwargs)
+        return self.request(url, method, **kwargs).json()
 
     def post(self, url ,method='POST', data=None, json=None, **kwargs):
-        return self.request(url, method, data, json, **kwargs)
+        return self.request(url, method, data, json, **kwargs).json()
 
     def put(self, url, method='PUT', data=None, **kwargs):
         return self.request(url, method, data, **kwargs)
@@ -45,6 +45,7 @@ class ApiRequest:
         :return:
         """
         url = self.url + url
+
         if "herders" in kwargs:
             self.variables["herders"] = kwargs.get("herders")
         if "params" in kwargs:
@@ -61,6 +62,7 @@ class ApiRequest:
         if method in ['GET', 'get']:
             return self.session.get(url, **kwargs)
         if method in ['POST', 'post']:
+            #json_data = js.dumps(data)
             return self.session.post(url, data, json, **kwargs)
         if method == "PUT":
             if json:
