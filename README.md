@@ -2,8 +2,10 @@
 基于python3 pytest+requests+allure的接口自动化框架改造
 
 ## 项目结构
-api 封装请求方法\
+api 封装请求方法
 +   client.py 封装访问api请求方法
++   tokens.py 获取登录企业微信的token
++   address_book/member_api.py 通讯录/成员管理
 
 conf 配置文件
 +   config.ini \
@@ -21,3 +23,5 @@ common 封装常用的工具包
 logs 存放日志文件\
 
 dataprovider 数据提供者
+
+ApiAutoTest
