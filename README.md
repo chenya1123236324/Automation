@@ -6,6 +6,8 @@ api 封装请求方法
 +   client.py 封装访问api请求方法
 +   tokens.py 获取登录企业微信的token
 +   address_book/member_api.py 通讯录/成员管理
++   address_book/department_api.py 通讯录/部门管理
++   address_book/tag_api.py 通讯录/标签管理
 
 conf 配置文件
 +   config.ini \
