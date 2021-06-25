@@ -25,5 +25,11 @@ common 封装常用的工具包
 logs 存放日志文件\
 
 dataprovider 数据提供者
++   member/member.yaml 成员管理测试数据
+
+testcase 测试用例
++   conftest.py 定义全局获取token
++   member/test_member.py 成员管理测试用例
++   member/conftest.py 定义加载 member_api_data文件
 
 ApiAutoTest

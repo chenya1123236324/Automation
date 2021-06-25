@@ -12,9 +12,11 @@ from api.client import ApiRequest
 
 class Member(ApiRequest):
 
-    def create_member(self, token, userid, name, mobile, department):
+    def create_member(self, token, userid, name, mobile, department=None):
         """创建成员"""
         url = f'/cgi-bin/user/create?access_token={token}'
+        if department is None:
+            department = "1"
         data = {
             "userid": userid,
             "name": name,

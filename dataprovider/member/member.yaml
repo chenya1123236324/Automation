@@ -1,0 +1,5 @@
+create_member:
+  # userid, name, mobile, department=None, errcode, errmsg
+  - ["pophas001", "pophas001", "18100000001", 0, "created"]
+  - ["pophas002", "pophas002", "18100000002", 0, "created"]
+  - ["pophas003", "pophas003", "18100000003", 0, "created"]
