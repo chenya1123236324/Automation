@@ -32,7 +32,7 @@ class Member(ApiRequest):
         req = self.get(url=url)
         return req
 
-    def update_member(self, token, userid, name=None, mobile=None):
+    def update_member(self, token, userid, name, mobile):
         """更新成员"""
         url = f'/cgi-bin/user/update?access_token={token}'
         data = {

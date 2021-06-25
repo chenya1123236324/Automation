@@ -3,3 +3,24 @@ create_member:
   - ["pophas001", "pophas001", "18100000001", 0, "created"]
   - ["pophas002", "pophas002", "18100000002", 0, "created"]
   - ["pophas003", "pophas003", "18100000003", 0, "created"]
+
+get_member:
+  # userid, errcode, errmsg
+  - ["pophas001", 0, "ok"]
+
+update_member:
+  # userid, name, mobile, errcode, errmsg
+  - ["pophas001", "tai001", "13000000000", 0, "updated"]
+
+
+delete_member:
+  # userid, errcode, errmsg
+  - ["pophas001", 0, "deleted"]
+
+batch_delete_member:
+  # useridlist, errcode, errmsg
+  - [["pophas002", "pophas003"], 0, "deleted"]
+
+get_department_member_details:
+  # department_id, fetch_child=0, errcode, errmsg
+  - [1, "", 0, "ok"]
