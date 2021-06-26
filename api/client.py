@@ -62,7 +62,7 @@ class ApiRequest:
         if method in ['GET', 'get']:
             return self.session.get(url, **kwargs)
         if method in ['POST', 'post']:
-            #json_data = js.dumps(data)
+            #json_data = js.loads(data, indent=4, ensure_ascii=False)
             return self.session.post(url, data, json, **kwargs)
         if method == "PUT":
             if json:

@@ -1,0 +1,22 @@
+create_department:
+  # parentId 父部门ID, name, errcode, errmsg
+  - [1, "广州研发中心", 0, "created"]
+  - [1, "惠州研发中心", 0, "created"]
+  - [2, "陈江研发中心", 0, "created"]
+
+
+update_department:
+  # id 部门ID, name=None, errcode, errmsg
+  - [2, "深圳研发中心", 0, "updated"]
+
+
+get_department_list:
+  # id(部门id，为空 默认所有)
+  - [1, 0, "ok"]
+
+
+delete_department:
+  # id 删除部门ID, errcode, errmsg
+  - [4, 0, "deleted"]
+  - [3, 0, "deleted"]
+  - [2, 0, "deleted"]

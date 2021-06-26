@@ -22,7 +22,7 @@ common 封装常用的工具包
 `load_file 项目加载指定文件`
 +   logger.py 封装日志方法
 
-logs 存放日志文件\
+logs 存放日志文件
 
 dataprovider 数据提供者
 +   member/member.yaml 成员管理测试数据
@@ -33,3 +33,6 @@ testcase 测试用例
 +   member/conftest.py 定义加载 member_api_data文件
 
 ApiAutoTest
+
+pytest.mark.parametrize 参数化的测试方法中，有一段代码只需要跑第一条用例的时候执行?
+依赖注解

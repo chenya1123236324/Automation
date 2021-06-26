@@ -20,6 +20,7 @@ class Department(ApiRequest):
         :return:
         """
         url = f'/cgi-bin/department/create?access_token={token}'
+        #name = name.encode("utf-8").decode("unicode_escape")
         data = {
             "parentid": parentId,
             "name": name
@@ -54,7 +55,7 @@ class Department(ApiRequest):
         req = self.get(url=url)
         return req
 
-    def get_department_list(self, token, id):
+    def get_department_list(self, token, id=None):
         """
         获取部门列表
         :param token:
@@ -74,10 +75,10 @@ if __name__ == '__main__':
     token = WechatApi().obtain_token(corpid, secret)
     req = Department()
     # 创建部门
-    # print(req.create_department(token, 1, '广州研发中心'))
+    print(req.create_department(token, 1, '广州研发中心'))
     # 更新部门
     # print(req.update_department(token, 2, '深圳研发中心'))
     # 删除部门
     #print(req.delete_department(token, 2))
     # 获取部门列表
-    print(req.get_department_list(token, 1))
+    #print(req.get_department_list(token, 1))
