@@ -23,6 +23,7 @@ class ApiRequest:
         return self.request(url, method, **kwargs).json()
 
     def post(self, url ,method='POST', data=None, json=None, **kwargs):
+        #json = json.encode("utf-8").decode("unicode_escape")
         return self.request(url, method, data, json, **kwargs).json()
 
     def put(self, url, method='PUT', data=None, **kwargs):

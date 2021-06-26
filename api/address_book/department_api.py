@@ -20,12 +20,13 @@ class Department(ApiRequest):
         :return:
         """
         url = f'/cgi-bin/department/create?access_token={token}'
-        #name = name.encode("utf-8").decode("unicode_escape")
+
         data = {
             "parentid": parentId,
             "name": name
         }
         req = self.post(url=url, json=data)
+
         return req
 
     def update_department(self, token, id, name=None):
@@ -79,6 +80,6 @@ if __name__ == '__main__':
     # 更新部门
     # print(req.update_department(token, 2, '深圳研发中心'))
     # 删除部门
-    #print(req.delete_department(token, 2))
+    print(req.delete_department(token, 2))
     # 获取部门列表
     #print(req.get_department_list(token, 1))
