@@ -26,18 +26,23 @@ logs 存放日志文件
 
 dataprovider 数据提供者
 +   member/member.yaml 成员管理测试数据
-+   department/department.yaml 部分管理测试数据
++   department/department.yaml 部门管理测试数据
++   tag/tag.yaml 标签管理测试数据
 
 testcase 测试用例
 +   conftest.py 定义全局获取token
 `get_token 声明全局获取token`
-`pytest_collection_modifyitems 解决测试用例参数化时用例名称有中文，输出控制台与html测试报告unicode编码问题`
+`pytest_collection_modifyitems钩子函数 解决测试用例参数化时用例名称有中文，输出控制台与html测试报告unicode编码问题`
 +   member/test_member.py 成员管理测试用例
 +   member/conftest.py 定义加载 member_api_data 文件
 +   department/test_department.py 部门管理测试用例
 +   department/conftest.py 定义加载 department_api_data 文件
++   tag/test_tag.py 标签管理测试用例
++   tag/conftest.py 定义加载 tag_api_data 文件
 
 ApiAutoTest
 
 pytest.mark.parametrize 参数化的测试方法中，有一段代码只需要跑第一条用例的时候执行?
 依赖注解
+
+11. pytest_collection_modifyitems钩子函数 解决测试用例参数化时用例名称有中文，输出控制台与html测试报告unicode编码问题

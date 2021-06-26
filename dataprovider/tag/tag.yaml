@@ -1,0 +1,12 @@
+create_tag:
+  # tag_name 标签名称, errcode, errmsg
+  - ["pophas", 0, "created"]
+  - ["中文标签", 0, "created"]
+
+update_tag_name:
+  # tag_id 标签id, tag_name 标签名称, errcode, errmsg
+  - [1, "update_pophas", 0, "updated"]
+
+delete_tag:
+  # tag_id 标签id, errcode, errmsg
+  - [1, 0, "deleted"]

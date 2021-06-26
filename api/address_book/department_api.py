@@ -20,7 +20,6 @@ class Department(ApiRequest):
         :return:
         """
         url = f'/cgi-bin/department/create?access_token={token}'
-
         data = {
             "parentid": parentId,
             "name": name

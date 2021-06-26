@@ -23,7 +23,6 @@ class ApiRequest:
         return self.request(url, method, **kwargs).json()
 
     def post(self, url ,method='POST', data=None, json=None, **kwargs):
-        #json = json.encode("utf-8").decode("unicode_escape")
         return self.request(url, method, data, json, **kwargs).json()
 
     def put(self, url, method='PUT', data=None, **kwargs):
@@ -63,7 +62,6 @@ class ApiRequest:
         if method in ['GET', 'get']:
             return self.session.get(url, **kwargs)
         if method in ['POST', 'post']:
-            #json_data = js.loads(data, indent=4, ensure_ascii=False)
             return self.session.post(url, data, json, **kwargs)
         if method == "PUT":
             if json:
