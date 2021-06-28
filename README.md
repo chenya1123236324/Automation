@@ -24,6 +24,12 @@ common 封装常用的工具包
 
 logs 存放日志文件
 
+report 存放测试报告
++   report/tempdata
+`pytest testcase --alluredir report\tempdata`
++   report/html
+`allure generate report\tempdata -o report\html`
+
 dataprovider 数据提供者
 +   member/member.yaml 成员管理测试数据
 +   department/department.yaml 部门管理测试数据
@@ -83,8 +89,9 @@ https://blog.csdn.net/yxxxiao/article/details/94591174
 11. 封装通讯录管理 部门管理测试用例
 11. pytest_collection_modifyitems钩子 解决测试用例参数化时用例名称有中文，输出控制台与html测试报告unicode编码问题(tag: v0.2.7)
 12. 封装通讯录管理 标签管理测试用例(tag: v0.2.8)
+13. 引入allure生成测试报告
 
 
-pytest testcase --alluredir report\tempdata
-allure generate report\tempdata -o report\html
+
+
 
