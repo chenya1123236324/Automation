@@ -12,3 +12,18 @@
 from common.read_config import load_file
 
 tag_api_data = load_file("tag.yaml")
+
+def obtain_response(before_func):
+    def decorator(func):
+        def wrapper(*args, **kwargs):
+            print(args[0])
+            print(args[1])
+
+            # before_result = before_func(*args, **kwargs)
+            # if isinstance(before_result, dict):
+            #     for i in before_result.get("taglist"):
+            #
+            #         res = func(i.get("tagid"))
+            #         return res
+        return wrapper
+    return decorator

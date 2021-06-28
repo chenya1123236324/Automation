@@ -1,3 +1,5 @@
+allure-pytest==2.9.43
+allure-python-commons==2.9.43
 atomicwrites==1.4.0
 attrs==21.2.0
 certifi==2021.5.30
@@ -12,5 +14,6 @@ pyparsing==2.4.7
 pytest==6.2.4
 PyYAML==5.4.1
 requests==2.25.1
+six==1.16.0
 toml==0.10.2
 urllib3==1.26.5

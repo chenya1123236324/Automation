@@ -52,6 +52,16 @@ class Tag(ApiRequest):
         req = self.get(url=url)
         return req
 
+    def get_tag_list(self, token):
+        """
+        获取标签列表
+        :param token:
+        :return:
+        """
+        url = f'/cgi-bin/tag/list?access_token={token}'
+        req = self.get(url=url)
+        return req
+
     def get_tag_member(self, token, tagid):
         """
         获取标签成员
@@ -95,5 +105,7 @@ if __name__ == '__main__':
     # print(req.update_tag_name(token, 1, 'datag'))
 
     # 删除标签
-    print(req.delete_tag(token, 1))
+    #print(req.delete_tag(token, 1))
+    # 获取标签列表
+    print(req.get_tag_list(token))
 
