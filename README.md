@@ -93,6 +93,7 @@ https://blog.csdn.net/yxxxiao/article/details/94591174
 11. pytest_collection_modifyitems钩子 解决测试用例参数化时用例名称有中文，输出控制台与html测试报告unicode编码问题(tag: v0.2.7)
 12. 封装通讯录管理 标签管理测试用例(tag: v0.2.8)
 13. 引入allure生成测试报告(tag: v0.2.9)
+14. 测试报告添加内容：测试数据作为测试报告的标题，添加bug链接，添加测试用例链接，测试步骤
 
 
 
