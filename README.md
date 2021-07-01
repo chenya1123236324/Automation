@@ -13,9 +13,14 @@ api 封装请求方法
 
 conf 配置文件
 +   config.ini \
-test_url 测试环境的url
++   pytest.conf 生成pytest.ini 文件的模板
++   conf/wechatApi/wechatApi.conf # wechatApi项目的配置文件
 
 common 封装常用的工具包
++   common/baseob 存放自定义类对象
++   `common/baseob/api/wechatApi/wechatApiConf.py 自定wechatApi项目的类对象`
++   common/base 基础可调用函数
++   `common/base/api/api_wechatApi_read_config.py 读取wechatApi项目的配置文件 `
 +   \_\_init\_\_.py \
 `BASE_PATH 获取项目根路径`
 +   read_config.py 封装读取文件方法\
@@ -23,6 +28,25 @@ common 封装常用的工具包
 `load_yaml 加载yaml文件`
 `load_file 项目加载指定文件`
 +   logger.py 封装日志方法
++   processfiletool.py 处理文档内容工具函数
++   datetimeutil.py 处理时间工具
+
+init 初始化工具
++   init/api_init.py 初始化必要数据
++   `init/api/wechatApi/wechatInit.py 初始化函数，比如：清除上一次构造的数据`
+
+```python
+baseob 自定义类对象 或者 *.conf
+base 基础可调用函数（调用自定义类对象以及配置文件）
+初始化函数
+初始化函数入口 api_init.py
+测试用例执行文件 run_api_test.py
+
+初始化函数的使用:
+run_api_test.py >> api_init.py >> init/api/wechatApi/wechatInit.py >> 
+common/base/api/api_wechatApi_read_config.py >> common/baseob/api/wechatApi/wechatApiConf.py
+common/base/api/api_wechatApi_read_config.py >> conf/wechatApi/wechatApi.conf
+```
 
 logs 存放日志文件
 
@@ -85,15 +109,18 @@ https://blog.csdn.net/yxxxiao/article/details/94591174
 5. 数据提供者
 6. 获取登录企业微信的token
 7. 通讯录管理 成员管理
-7. 通讯录管理 封装成员管理的api
+   通讯录管理 封装成员管理的api
 8. 通讯录管理 封装部门管理的api
 9. 通讯录管理 封装标签管理的api
 10. 引入数据提供者驱动、conftest.py声明全局token
 11. 封装通讯录管理 部门管理测试用例
-11. pytest_collection_modifyitems钩子 解决测试用例参数化时用例名称有中文，输出控制台与html测试报告unicode编码问题(tag: v0.2.7)
+    pytest_collection_modifyitems钩子 解决测试用例参数化时用例名称有中文，输出控制台与html测试报告unicode编码问题(tag: v0.2.7)
 12. 封装通讯录管理 标签管理测试用例(tag: v0.2.8)
 13. 引入allure生成测试报告(tag: v0.2.9)
-14. 测试报告添加内容：测试数据作为测试报告的标题，添加bug链接，添加测试用例链接，测试步骤
+14. 测试报告添加内容：测试数据作为测试报告的标题，添加bug链接，添加测试用例链接，测试步骤( tag: v0.3.1)
+添加处理文档内容工具函数
+添加时间处理函数
+15. 添加项目初始化工具(tag: v0.3.2)
 
 
 

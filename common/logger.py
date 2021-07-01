@@ -51,10 +51,10 @@ def logFile(fileName, output='all'):
         raise ValueError("output参数错误")
 
 
-logger = logFile('接口测试', output='file')
+logger = logFile('接口测试', output='all')
 
-# logger.critical('critical严重错误')
+logger.critical('critical严重错误')
 # logger.error('error错误')
 # logger.warning('warning警告')
-# logger.info('info信息')
+logger.info('info信息')
 # logger.debug('debug调试日志')

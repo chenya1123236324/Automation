@@ -9,6 +9,7 @@
 @desc:
 '''
 from api.client import ApiRequest
+from common.logger import logger
 
 class Department(ApiRequest):
     def create_department(self, token, parentId, name):
@@ -25,7 +26,7 @@ class Department(ApiRequest):
             "name": name
         }
         req = self.post(url=url, json=data)
-
+        logger.info("创建部门 ==>> 返回结果 ==>> {}".format(req))
         return req
 
     def update_department(self, token, id, name=None):
@@ -42,6 +43,7 @@ class Department(ApiRequest):
             "name": name
         }
         req = self.post(url=url, json=data)
+        logger.info("修改部门 ==>> 返回结果 ==>> {}".format(req))
         return req
 
     def delete_department(self, token, id):
@@ -77,8 +79,8 @@ if __name__ == '__main__':
     # 创建部门
     print(req.create_department(token, 1, '广州研发中心'))
     # 更新部门
-    # print(req.update_department(token, 2, '深圳研发中心'))
+    print(req.update_department(token, 2, '深圳研发中心'))
     # 删除部门
     print(req.delete_department(token, 2))
     # 获取部门列表
-    #print(req.get_department_list(token, 1))
+    print(req.get_department_list(token, 1))

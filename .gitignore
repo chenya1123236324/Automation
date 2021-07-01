@@ -4,3 +4,11 @@ venv/
 demo.py
 report/
 logs/
+common/pytest.py
+conf/pytest.conf
+# 项目初始化
+#common/base
+#common/baseob
+#conf/wechatApi
+#init/
+#run_api_test.py
