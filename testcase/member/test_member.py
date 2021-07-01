@@ -19,6 +19,7 @@ from api.address_book.member_api import Member
 class TestMember:
     member = Member()
 
+    @pytest.mark.smoke
     @allure.story("用例--创建成员")
     @allure.description("该用例是针对通讯录管理下的成员管理 创建成员接口的测试")
     @allure.title("测试数据：【 {userid}, {name}, {mobile}, {errcode}, {errmsg} 】")
@@ -49,6 +50,7 @@ class TestMember:
         assert req.get("errcode") == errcode
         assert errmsg in req.get("errmsg")
 
+    @pytest.mark.smoke
     @allure.story("用例--删除成员")
     @allure.description("该用例是针对通讯录管理下的成员管理 删除成员接口的测试")
     @allure.title("测试数据：【 {userid}, {errcode}, {errmsg} 】")
@@ -67,6 +69,7 @@ class TestMember:
         assert req.get("errcode") == errcode
         assert errmsg in req.get("errmsg")
 
+    @pytest.mark.smoke
     @allure.story("用例--获取部门成员详情")
     @allure.description("该用例是针对通讯录管理下的成员管理 获取部门成员详情接口的测试")
     @allure.title("测试数据：【 {department_id}, {fetch_child}, {errcode}, {errmsg} 】")

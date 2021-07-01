@@ -97,7 +97,25 @@ import pytest
 def test_01_demo():
     ...
 
+# 运行指定标记的用例
+# 在pytest.ini配置文件的
+[pytest]
+markers = 
+    smoke: #添加标签，可以自定义
+@pytest.mark.smoke
+def test_02_demo():
+    ...
+
 ```
+## 运行测试
+1、API测试
+
+cd AutomationTest\
+python3 -u run_api_test.py --help\
+python3 -u run_api_test.py 运行cases/api/目录所有的用例\
+python3 -u run_api_test.py -k keyword 运行匹配关键字的用例，会匹配文件名、类名、方法名\
+python3 -u run_api_test.py -d dir 运行指定目录的用例，默认运行cases/api/目录\
+python3 -u run_api_test.py -m mark 运行指定标记的用例
 
 https://blog.csdn.net/yxxxiao/article/details/94591174
 
@@ -121,6 +139,7 @@ https://blog.csdn.net/yxxxiao/article/details/94591174
 添加处理文档内容工具函数
 添加时间处理函数
 15. 添加项目初始化工具(tag: v0.3.2)
+16. 添加命令行运行测试
 
 
 

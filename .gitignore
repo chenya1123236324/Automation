@@ -4,8 +4,8 @@ venv/
 demo.py
 report/
 logs/
-common/pytest.py
-conf/pytest.conf
+#common/pytest.py
+#conf/pytest.conf
 # 项目初始化
 #common/base
 #common/baseob
