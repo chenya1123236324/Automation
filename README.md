@@ -15,12 +15,15 @@ conf 配置文件
 +   config.ini \
 +   pytest.conf 生成pytest.ini 文件的模板
 +   conf/wechatApi/wechatApi.conf # wechatApi项目的配置文件
++   conf/wechatApi/report.conf # 配置生成测试报告的端口
 
 common 封装常用的工具包
 +   common/baseob 存放自定义类对象
-+   `common/baseob/api/wechatApi/wechatApiConf.py 自定wechatApi项目的类对象`
++   `common/baseob/api/wechatApi/wechatApiConf.py 定义wechatApi项目的类对象`
++   `common/baseob/report_config.py 定义报告配置的类对象`
 +   common/base 基础可调用函数
 +   `common/base/api/api_wechatApi_read_config.py 读取wechatApi项目的配置文件 `
++   `common/base/api/read_report_config.py 读取生成测试报告的配置文件`
 +   \_\_init\_\_.py \
 `BASE_PATH 获取项目根路径`
 +   read_config.py 封装读取文件方法\
@@ -30,6 +33,8 @@ common 封装常用的工具包
 +   logger.py 封装日志方法
 +   processfiletool.py 处理文档内容工具函数
 +   datetimeutil.py 处理时间工具
++   network.py 获取本地IP
++   strutil.py 处理字符串的模块
 
 init 初始化工具
 +   init/api_init.py 初始化必要数据
@@ -72,6 +77,9 @@ testcase 测试用例
 +   department/conftest.py 定义加载 department_api_data 文件
 +   tag/test_tag.py 标签管理测试用例
 +   tag/conftest.py 定义加载 tag_api_data 文件
+
+run_api_test.py 运行api测试用例文件
+generate_api_test_report.py 生成测试报告并自动打开浏览器
 
 ApiAutoTest
 
@@ -119,6 +127,17 @@ python3 -u run_api_test.py -m mark 运行指定标记的用例
 
 https://blog.csdn.net/yxxxiao/article/details/94591174
 
+## 生成测试报告
+
+1、API测试
+
++   cd ApiAutomation\
++   pytest testcase --alluredir report\tempdata --clean-alluredir 运行测试用例
++   python3 -u generate_api_test_report.py -p 9080\
++   在使用Ubuntu进行报告生成时，请勿使用sudo权限，否则无法生成，allure不支持
+
+
+
 ## 提交记录
 1. 生成requirements.txt依赖文件
 2. 封装访问请求方法client
@@ -140,6 +159,7 @@ https://blog.csdn.net/yxxxiao/article/details/94591174
 添加时间处理函数
 15. 添加项目初始化工具(tag: v0.3.2)
 16. 添加命令行运行测试
+17. 自动打开浏览器查看测试报告
 
 
 
