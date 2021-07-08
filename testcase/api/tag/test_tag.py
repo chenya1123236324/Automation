@@ -10,8 +10,8 @@
 '''
 import pytest
 import allure
-from testcase.tag.conftest import tag_api_data
-from api.address_book.tag_api import Tag
+from testcase.api.tag.conftest import tag_api_data
+from api.apiautomation.tag_api import Tag
 
 
 @allure.epic("通讯录接口测试")
@@ -20,6 +20,7 @@ from api.address_book.tag_api import Tag
 class TestTag:
     tag = Tag()
 
+    @pytest.mark.run(order=1)
     @allure.story("用例--创建标签")
     @allure.description("该用例是针对通讯录管理下的标签管理 创建标签接口的测试")
     @allure.title("测试数据：【 {tag_name}, {errcode}, {errmsg} 】")
@@ -30,6 +31,7 @@ class TestTag:
         assert req.get("errcode") == errcode
         assert errmsg in req.get("errmsg")
 
+    @pytest.mark.run(order=2)
     @allure.story("用例--更新标签名称")
     @allure.description("该用例是针对通讯录管理下的标签管理 更新标签名称接口的测试")
     @allure.title("测试数据：【 {tag_id}, {tag_name}, {errcode}, {errmsg} 】")
@@ -40,6 +42,7 @@ class TestTag:
         assert req.get("errcode") == errcode
         assert errmsg in req.get("errmsg")
 
+    @pytest.mark.run(order=3)
     @allure.story("用例--获取标签列表")
     @allure.description("该用例是针对通讯录管理下的标签管理 获取标签列表接口的测试")
     @allure.title("测试数据：【 {errcode}, {errmsg} 】")
@@ -50,6 +53,7 @@ class TestTag:
         assert req.get("errcode") == errcode
         assert errmsg in req.get("errmsg")
 
+    @pytest.mark.run(order=4)
     @allure.story("用例--删除标签")
     @allure.description("该用例是针对根据获取的标签列表的标签id来删除标签")
     @allure.title("测试数据：【 {errcode}, {errmsg} 】")

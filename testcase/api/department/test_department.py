@@ -10,8 +10,8 @@
 '''
 import pytest
 import allure
-from testcase.department.conftest import department_api_data
-from api.address_book.department_api import Department
+from testcase.api.department.conftest import department_api_data
+from api.apiautomation.department_api import Department
 
 @allure.epic("通讯录接口测试")
 @allure.feature("部门管理")
@@ -27,6 +27,7 @@ class TestDepartment:
         # 部门初始化处理 删除所有的部门
         pass
 
+    @pytest.mark.run(order=1)
     @allure.story("用例--创建部门")
     @allure.description("该用例是针对通讯录管理下的部门管理 创建部门接口的测试")
     @allure.title("测试数据：【 {parentid}, {name}, {errcode}, {errmsg} 】")
@@ -37,6 +38,7 @@ class TestDepartment:
         assert req.get("errcode") == errcode
         assert errmsg in req.get("errmsg")
 
+    @pytest.mark.run(order=2)
     @allure.story("用例--更新部门")
     @allure.description("该用例是针对通讯录管理下的部门管理 更新部门接口的测试")
     @allure.title("测试数据：【 {id}, {name}, {errcode}, {errmsg} 】")
@@ -46,6 +48,7 @@ class TestDepartment:
         assert req.get("errcode") == errcode
         assert errmsg in req.get("errmsg")
 
+    @pytest.mark.run(order=3)
     @allure.story("用例--获取部门列表")
     @allure.description("该用例是针对通讯录管理下的部门管理 获取部门列表接口的测试")
     @allure.title("测试数据：【 {id}, {errcode}, {errmsg} 】")
@@ -56,6 +59,7 @@ class TestDepartment:
         assert req.get("errcode") == errcode
         assert errmsg in req.get("errmsg")
 
+    @pytest.mark.run(order=4)
     @allure.story("用例--删除部门")
     @allure.description("该用例是针对通讯录管理下的部门管理 删除部门接口的测试")
     @allure.title("测试数据：【 {id}, {errcode}, {errmsg} 】")
@@ -70,6 +74,7 @@ class TestDepartment:
     # TODO 数据清除
     # TODO 获取所有的部门包含子部门
     # TODO 判断获取到的部门是否有子部门，然后先删除子部门，再删除父部门
+    @pytest.mark.run(order=5)
     def test_05_delete_departments(self, get_token):
         from jsonpath import jsonpath
         # 获取所有的部门列表

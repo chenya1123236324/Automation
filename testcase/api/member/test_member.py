@@ -10,8 +10,8 @@
 '''
 import pytest
 import allure
-from testcase.member.conftest import member_api_data
-from api.address_book.member_api import Member
+from testcase.api.member.conftest import member_api_data
+from api.apiautomation.member_api import Member
 
 @allure.epic("通讯录接口测试")
 @allure.feature("成员管理")
@@ -19,6 +19,7 @@ from api.address_book.member_api import Member
 class TestMember:
     member = Member()
 
+    @pytest.mark.run(order=1)
     @pytest.mark.smoke
     @allure.story("用例--创建成员")
     @allure.description("该用例是针对通讯录管理下的成员管理 创建成员接口的测试")
@@ -31,6 +32,7 @@ class TestMember:
         assert req.get("errcode") == errcode
         assert errmsg in req.get("errmsg")
 
+    @pytest.mark.run(order=2)
     @allure.story("用例--获取成员")
     @allure.description("该用例是针对通讯录管理下的成员管理 获取成员接口的测试")
     @allure.title("测试数据：【 {userid}, {errcode}, {errmsg} 】")
@@ -40,6 +42,7 @@ class TestMember:
         assert req.get("errcode") == errcode
         assert errmsg in req.get("errmsg")
 
+    @pytest.mark.run(order=3)
     @allure.story("用例--更新成员信息")
     @allure.description("该用例是针对通讯录管理下的成员管理 更新成员信息接口的测试")
     @allure.title("测试数据：【 {userid}, {name}, {mobile}, {errcode}, {errmsg} 】")
@@ -50,6 +53,7 @@ class TestMember:
         assert req.get("errcode") == errcode
         assert errmsg in req.get("errmsg")
 
+    @pytest.mark.run(order=4)
     @pytest.mark.smoke
     @allure.story("用例--删除成员")
     @allure.description("该用例是针对通讯录管理下的成员管理 删除成员接口的测试")
@@ -60,6 +64,7 @@ class TestMember:
         assert req.get("errcode") == errcode
         assert errmsg in req.get("errmsg")
 
+    @pytest.mark.run(order=5)
     @allure.story("用例--批量删除成员")
     @allure.description("该用例是针对通讯录管理下的成员管理 批量删除成员接口的测试")
     @allure.title("测试数据：【 {useridlist}, {errcode}, {errmsg} 】")
@@ -69,6 +74,7 @@ class TestMember:
         assert req.get("errcode") == errcode
         assert errmsg in req.get("errmsg")
 
+    @pytest.mark.run(order=6)
     @pytest.mark.smoke
     @allure.story("用例--获取部门成员详情")
     @allure.description("该用例是针对通讯录管理下的成员管理 获取部门成员详情接口的测试")
