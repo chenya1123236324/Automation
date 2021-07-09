@@ -15,7 +15,7 @@ from assertpy import assert_that
 class TestLogin:
     def setup_class(self):
         self.proClient = WebUIProClient()
-        self.loginPage = LoginPage(self.proClient.browserOperator, '登录智库资讯 - MBA智库帐户')
+        self.loginPage = LoginPage(self.proClient.browserOperator, 'MBA智库资讯,汇聚中国主流的商业管理资讯')
 
     def test_login_01(self):
         self.loginPage.login_kw()

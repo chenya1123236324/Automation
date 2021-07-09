@@ -303,6 +303,7 @@ https://blog.csdn.net/yxxxiao/article/details/94591174
 16. 添加命令行运行测试
 17. 自动打开浏览器查看测试报告(tag: v0.3.3)
 18. 整合并管理项目(tag: v0.3.4)
+19. 封装web ui 自动化框架(tag: v0.3.5)
 
 
 

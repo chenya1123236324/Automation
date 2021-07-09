@@ -220,7 +220,7 @@ class BrowserOperator:
         return alert.text
 
     def get_screenshot(self,fileName):
-        fileName=DateTimeTool.getNowTime('%Y%m%d%H%M%S%f_')+fileName
+        fileName=DateTimeUtil.getNowTime('%Y%m%d%H%M%S%f_')+fileName
         allure.attach(name=fileName,body=self._driver.get_screenshot_as_png(),attachment_type=allure.attachment_type.PNG)
 
     def refresh(self):
@@ -276,7 +276,7 @@ class BrowserOperator:
         right = webElement.location['x'] + webElement.size['width']
         bottom = webElement.location['y'] + webElement.size['height']
         # 进行屏幕截图
-        image_file_name = DateTimeTool.getNowTime('%Y%m%d%H%M%S%f_') + '%s.png'%image_file_name
+        image_file_name = DateTimeUtil.getNowTime('%Y%m%d%H%M%S%f_') + '%s.png'%image_file_name
         if not os.path.exists('output/tmp/'+self._config.current_browser):
             os.mkdir('output/tmp/'+self._config.current_browser)
         image_file_name = os.path.abspath(
