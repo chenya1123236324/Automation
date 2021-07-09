@@ -19,7 +19,8 @@ export PATH=${JAVA_HOME}/bin:$PATH
 +   配置selenium server
     +   下载selenium-server-standalone-3.141.0.jar
     +   下载地址:http://selenium-release.storage.googleapis.com/index.html
-    +   以管理员身份启动服务:java -jar selenium-server-standalone-3.141.0.jar -log selenium.log
+    +   以管理员身份启动服务:
+        `java -jar selenium-server-standalone-3.141.0.jar -log selenium.log`
 +   下载浏览器驱动
     +   谷歌浏览器：http://chromedriver.storage.googleapis.com/index.html
     +   火狐浏览器：https://github.com/mozilla/geckodriver/

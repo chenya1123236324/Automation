@@ -15,11 +15,14 @@ from assertpy import assert_that
 class TestLogin:
     def setup_class(self):
         self.proClient = WebUIProClient()
-        self.loginPage = LoginPage(self.proClient.browserOperator, 'MBA智库资讯,汇聚中国主流的商业管理资讯')
+        self.loginPage = LoginPage(self.proClient.browserOperator)
 
     def test_login_01(self):
-        self.loginPage.login_kw()
-        assert_that('登录智库资讯 - MBA智库帐户').is_equal_to(self.proClient.browserOperator.getTitle())
+        self.loginPage.login_page("Imobs", 'imobs123')
+        assert_that('MBA智库资讯,汇聚中国主流的商业管理资讯').is_equal_to(self.proClient.browserOperator.getTitle())
+
+
+
 
     def teardown_class(self):
         self.proClient.browserOperator.close()
