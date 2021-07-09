@@ -27,16 +27,16 @@ if __name__ == '__main__':
     # # 处理pytest文件
     deal_pytest_ini_file()
 
-    # # 初始化
-    # print('%s开始初始化......' % DateTimeUtil.getNowTime())
-    # api_init()
-    # print('%s初始化完成......' % DateTimeUtil.getNowTime())
+    # 初始化
+    print('%s开始初始化......' % DateTimeUtil.getNowTime())
+    api_init()
+    print('%s初始化完成......' % DateTimeUtil.getNowTime())
 
     # 执行pytest前的参数准备
     pytest_execute_params = ['-c', 'conf/pytest.ini', '-v', '--alluredir', 'report/tempdata/']
 
     # 判断目录参数
-    dir = 'testcase/'
+    dir = 'testcase/api/'
     if args.dir:
         dir = args.dir
     # 判断关键字参数

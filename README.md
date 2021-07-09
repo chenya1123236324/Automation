@@ -2,12 +2,37 @@
 自动化框架改造
 包含：接口自动化、app自动化
 
-## apiautomation
+## apiautomation 接口自动化
 基于python3 pytest+requests+allure的接口自动化框架改造
+
+## web_ui Web UI自动化化
+### 环境准备
+#### 1、selenium server 运行环境部署
+##### 1.1 安装jdk 1.8，并配置环境变量
+```python
+export JAVA_HOME=/usr/lib/jvm/jdk8
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:${JAVA_HOME}/lib:${JRE_HOME}/lib
+export PATH=${JAVA_HOME}/bin:$PATH
+```
+##### 1.2 安装配置selenium
++   配置selenium server
+    +   下载selenium-server-standalone-3.141.0.jar
+    +   下载地址:http://selenium-release.storage.googleapis.com/index.html
+    +   以管理员身份启动服务:java -jar selenium-server-standalone-3.141.0.jar -log selenium.log
++   下载浏览器驱动
+    +   谷歌浏览器：http://chromedriver.storage.googleapis.com/index.html
+    +   火狐浏览器：https://github.com/mozilla/geckodriver/
+        +   驱动支持的最低浏览器版本：https://firefox-source-docs.mozilla.org/testing/geckodriver/Support.html
+    +   将驱动所在目录加入到selenium server服务器系统环境变量:
+        +   export PATH=/home/john/selenium/:$PATH
+        +   或者直接放在python目录下即可
+
 
 执行前创建目录 logs，report/,report/tempdata, report/html
 
 ## 项目结构
+
 api 封装请求方法
 +   apiautomation/client.py 封装访问api请求方法
 +   apiautomation/tokens.py 获取登录企业微信的token
@@ -16,20 +41,52 @@ api 封装请求方法
 +   apiautomation/address_book/tag_api.py 通讯录/标签管理
 
 conf 配置文件
-+   config.ini \
-+   pytest.conf 生成pytest.ini 文件的模板
-+   conf/wechatApi/wechatApi.conf # wechatApi项目的配置文件
-+   conf/wechatApi/report.conf # 配置生成测试报告的端口
++ config.ini 
+
++ pytest.conf 生成pytest.ini 文件的模板
+
++ `conf/web_ui_config.conf # web_ui入口的配置文件`
+
++ conf/wechatApi
+
+  +   `conf/wechatApi/wechatApi.conf # wechatApi项目的配置文件`
+  +   `conf/wechatApi/report.conf # 配置生成测试报告的端口`
+
++ conf/web_ui
+
+  + `conf/web_ui/web_ui_pro.conf #web_ui项目的配置文件`
+
+    
 
 common 封装常用的工具包
+
++ common/selenium
+  + `common/selenium/browserOperator.py # 封装浏览常用方法`
+  + `driverUtil.py # driver对象`
+
++ common/pageObjects
+  + `common/pageObjects/createElement.py # 封装创建元素对象入口`
+  + common/pageObjects/web_ui
+    + `common/pageObjects/web_ui/locator_type.py # 定位方式类型对象` 
+    + `common/pageObjects/web_ui/wait_type.py # 等待方式类型对象`
+    + `common/pageObjects/web_ui/mbaPro # mba网站项目`
+      + `common/pageObjects/web_ui/mbaPro/elements # 元素`
+      + `common/pageObjects/web_ui/mbaPro/pages # 封装页面对象`
+
 +   common/baseob 存放自定义类对象
-+   `common/baseob/api/wechatApi/wechatApiConf.py 定义wechatApi项目的类对象`
-+   `common/baseob/report_config.py 定义报告配置的类对象`
+    +   `common/baseob/report_config.py 定义报告配置的类对象`
+    +   `common/baseob/web_ui_config.py 定义web_ui入口的类对象`
+    +   `common/baseob/elementInfo.py 定义元素信息的类对象`
+    +   `common/baseob/api/wechatApi/wechatApiConf.py 定义wechatApi项目的类对象`
+    +   `common/baseob/web_ui/proConfig.py 定义web_ui项目的类对象`
 +   common/base 基础可调用函数
-+   `common/base/api/api_wechatApi_read_config.py 读取wechatApi项目的配置文件 `
-+   `common/base/api/read_report_config.py 读取生成测试报告的配置文件`
-+   \_\_init\_\_.py \
-`BASE_PATH 获取项目根路径`
+    +   `common/base/api/read_report_config.py 读取生成测试报告的基础配置`
+    +   `common/base/read_web_ui_config.py 读取web_ui自动化的基础配置`
+    +   `common/base/api/api_wechatApi_read_config.py 读取wechatApi项目的配置文件 `
+    +   `common/base/web_ui/webUtil/web_ui_client.py 封装访问web请求基础函数`
+    +   `common/base/web_ui/webUtil/web_ui_pro_read_config.py 读取web_ui项目的配置`
+    +   \_\_init\_\_.py \
+    `BASE_PATH 获取项目根路径`
 +   read_config.py 封装读取文件方法\
 `load_ini 加载ini配置文件`
 `load_yaml 加载yaml文件`
@@ -43,6 +100,8 @@ common 封装常用的工具包
 init 初始化工具
 +   init/api_init.py 初始化必要数据
 +   `init/api/wechatApi/wechatInit.py 初始化函数，比如：清除上一次构造的数据`
++   `init/web_ui/mbaPro/mbaProInit.py # web_ui mba网站项目初始化`
++   `init/web_ui/web_ui_init.py #web_ui 入口初始化`
 
 ```python
 baseob 自定义类对象 或者 *.conf
@@ -64,6 +123,7 @@ report 存放测试报告
 `pytest testcase --alluredir report\tempdata --clean-alluredir`
 +   report/html
 `allure generate --clean report\tempdata -o report\html`
++   report/web_ui
 
 
 dataprovider 数据提供者
@@ -72,17 +132,25 @@ dataprovider 数据提供者
 +   api/tag/tag.yaml 标签管理测试数据
 
 testcase 测试用例
-+   api/conftest.py 定义全局获取token
-`get_token 声明全局获取token`
-`pytest_collection_modifyitems钩子函数 解决测试用例参数化时用例名称有中文，输出控制台与html测试报告unicode编码问题`
-+   api/member/test_member.py 成员管理测试用例
-+   api/member/conftest.py 定义加载 member_api_data 文件
-+   api/department/test_department.py 部门管理测试用例
-+   api/department/conftest.py 定义加载 department_api_data 文件
-+   api/tag/test_tag.py 标签管理测试用例
-+   api/tag/conftest.py 定义加载 tag_api_data 文件
+
++ web_ui
+  + `testcase/web_ui/mbaPro # mba网站项目 测试用例`
+
++ api
+  + api/conftest.py 定义全局获取token
+    `get_token 声明全局获取token`
+    `pytest_collection_modifyitems钩子函数 解决测试用例参数化时用例名称有中文，输出控制台与html测试报告unicode编码问题`
+  + api/member/test_member.py 成员管理测试用例
+  + api/member/conftest.py 定义加载 member_api_data 文件
+  + api/department/test_department.py 部门管理测试用例
+  + api/department/conftest.py 定义加载 department_api_data 文件
+  + api/tag/test_tag.py 标签管理测试用例
+  + api/tag/conftest.py 定义加载 tag_api_data 文件
 
 run_api_test.py 运行api测试用例文件
+
+run_web_ui_test.py 运行web_ui测试用例文件
+
 generate_api_test_report.py 生成测试报告并自动打开浏览器
 
 ApiAutoTest
@@ -186,12 +254,17 @@ def login():
 ## 运行测试
 1、API测试
 
-+   cd ApiAutomation
-+   python3 -u run_api_test.py --help
-+   python3 -u run_api_test.py 运行cases/api/目录所有的用例
-+   python3 -u run_api_test.py -k keyword 运行匹配关键字的用例，会匹配文件名、类名、方法名
-+   python3 -u run_api_test.py -d dir 运行指定目录的用例，默认运行cases/api/目录
-+   python3 -u run_api_test.py -m mark 运行指定标记的用例
++   cd Automation
++   python -u run_api_test.py --help
++   python -u run_api_test.py 运行testcase/api/目录所有的用例
++   python -u run_api_test.py -k keyword 运行匹配关键字的用例，会匹配文件名、类名、方法名
++   python -u run_api_test.py -d dir 运行指定目录的用例，默认运行cases/api/目录
++   python -u run_api_test.py -m mark 运行指定标记的用例
+
+2、Web UI测试
++	cd Automation
++	python -u run_web_ui_test.py --help
++	python -u run_web_ui_test.py 运行testcase/web_ui/目录所有的用例
 
 https://blog.csdn.net/yxxxiao/article/details/94591174
 
@@ -204,7 +277,8 @@ https://blog.csdn.net/yxxxiao/article/details/94591174
 +   python3 -u generate_api_test_report.py -p 9080
 +   在使用Ubuntu进行报告生成时，请勿使用sudo权限，否则无法生成，allure不支持
 
-
+## pip 安装依赖
+`https://www.lfd.uci.edu/~gohlke/pythonlibs/#jpype`
 
 ## 提交记录
 1. 生成requirements.txt依赖文件
@@ -228,8 +302,11 @@ https://blog.csdn.net/yxxxiao/article/details/94591174
 15. 添加项目初始化工具(tag: v0.3.2)
 16. 添加命令行运行测试
 17. 自动打开浏览器查看测试报告(tag: v0.3.3)
+18. 整合并管理项目(tag: v0.3.4)
 
 
 
 
 
+
+```

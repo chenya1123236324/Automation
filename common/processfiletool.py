@@ -9,6 +9,9 @@
 @desc:
 '''
 import os
+import re
+import ujson as ujson
+
 
 class FileUtil:
 
@@ -129,3 +132,16 @@ class FileUtil:
             with open(filePath, 'w+', encoding=encoding) as f:
                 f.writelines(content)
                 f.close()
+
+    @classmethod
+    def readJsonFromFile(cls, filePath, encoding='utf-8'):
+        """
+        从文件里读取json字符串
+        :param filePath:
+        :return:
+        """
+        with open(filePath, 'r', encoding=encoding) as f:
+            result = f.read()
+            f.close()
+        result = ujson.loads(result)
+        return result

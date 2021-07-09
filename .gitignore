@@ -12,3 +12,19 @@ logs/
 #conf/wechatApi
 #init/
 #run_api_test.py
+
+
+# app_ui
+common/appium
+common/base/app_ui
+common/baseob/app_ui
+common/baseob/httpResponseResult.py
+common/httpclient
+common/java
+common/captchaRecognitionTool.py
+
+conf/app_ui
+init/app_ui
+
+testcase/app_ui
+run_app_ui_test.py

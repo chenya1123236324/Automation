@@ -32,3 +32,4 @@ class WechatApiReadConfig(object):
         wechatConfig.url = config.get('servers', 'url')
         wechatConfig.init = config.get('isInit', 'init')
         return wechatConfig
+
