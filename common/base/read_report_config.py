@@ -22,7 +22,7 @@ class ReadReportConfig(object):
 
     def __init__(self):
         if self.__inited is None:
-            self.report_config = self._readConfig('conf/wechatApi/report.conf')
+            self.report_config = self._readConfig('conf/report.conf')
             self.__inited = True
 
     def _readConfig(self, configFile):
@@ -30,4 +30,7 @@ class ReadReportConfig(object):
         configParser.read(configFile, encoding='utf-8')
         report_config = ReportConfig()
         report_config.api_port = configParser.get('api', 'api_port')
+        report_config.web_ui_ie_port = configParser.get('web_ui', 'web_ui_ie_port')
+        report_config.web_ui_firefox_port = configParser.get('web_ui', 'web_ui_firefox_port')
+        report_config.web_ui_chrome_port = configParser.get('web_ui', 'web_ui_chrome_port')
         return report_config

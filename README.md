@@ -51,6 +51,9 @@ api 封装请求方法
 +   apiautomation/address_book/tag_api.py 通讯录/标签管理
 
 conf 配置文件
+
++ `conf/report.conf # 配置生成测试报告的端口`
+
 + config.ini 
 
 + pytest.conf 生成pytest.ini 文件的模板
@@ -60,8 +63,7 @@ conf 配置文件
 + conf/wechatApi
 
   +   `conf/wechatApi/wechatApi.conf # wechatApi项目的配置文件`
-  +   `conf/wechatApi/report.conf # 配置生成测试报告的端口`
-
+  
 + conf/web_ui
 
   + `conf/web_ui/web_ui_pro.conf #web_ui项目的配置文件`
@@ -259,8 +261,80 @@ def login():
     print("====退出登录！！！====")
 ```
 
+### 禁用xpass
+
+设置xfail_strict = true可以让那些标记为@pytest.mark.xfail，但实际通过的测试用例被报告为失败
+
+```python
+# pytest.ini
+[pytest]
+
+xfail_strict = true
+```
+
+```python
+# content of test_xpass.py
+import pytest
+
+def test_demo():
+    print("hello world!")
+    assert 1
+
+@pytest.mark.xfail()
+def test_demo1():
+    a = "hello"
+    b = "hello world"
+    assert a == b
+
+@pytest.mark.xfail()
+def test_demo2():
+    a = "hello"
+    b = "hello world"
+    assert a != b
+
+if __name__ == "__main__":
+    pytest.main(["-v", "test_xpass.py"])
+```
+
+### 按重要性级别进行一定范围测试
+
+通常测试有P0、冒烟测试、验证上线测试。按重要性级别来执行的，比如上线要把主流程和重要模块都跑一遍，可通过以下方法解决：
+
+- 通过附加@pytest.mark标记
+
+- 通过allure.feature,allure.story
+
+- 也可以通过allure.severity来附加标记
+
+  - 级别：
+    - trivial:不重要，轻微缺陷（必输项无提示，或者提示不规范）
+    - minor 不太重要，次要缺陷（界面错误与UI需求不符）
+    - normal:正常问题，普通缺陷（数值计算错误）
+    - critical:严重，临界缺陷（功能点缺失）
+    - blocker:阻塞，中断缺陷（客户端程序无响应，无法执行下一步操作）
+
+  ```python
+  # 使用方法：
+  # 在方法、函数和类上面加 @allure.severity(allure.severity_level.TRIVIAL)
+  
+  # 执行:
+  # pytest -s -v 文件名 --allure-severities normal,critical
+  
+  import allure
+  import pytest
+  
+  @allure.severity(allure.severity_level.TRIVIAL)
+  def test_demo():
+      ...
+  
+  ```
+
+  
+
+
 
 ## 运行测试
+
 1、API测试
 
 +   `cd Automation`
@@ -273,7 +347,7 @@ def login():
 2、Web UI测试
 +	`cd Automation`
 +	`python -u run_web_ui_test.py --help`
-+	`python -u run_web_ui_test.py` 运行testcase/web_ui/目录所有的用例
++	`python -u run_web_ui_test.py`  # 运行testcase/web_ui/目录所有的用例
 +	`python -u run_web_ui_test.py -k TestLogin` 运行匹配`TestLogin`的类名
 
 https://blog.csdn.net/yxxxiao/article/details/94591174
@@ -284,8 +358,20 @@ https://blog.csdn.net/yxxxiao/article/details/94591174
 
 +   `cd Automation`
 +   `pytest testcase/api --alluredir report\tempdata --clean-alluredir` 运行测试用例
-+   `python3 -u generate_api_test_report.py -p 9080`
++   `python -u generate_api_test_report.py -p 9080`
 +   在使用Ubuntu进行报告生成时，请勿使用sudo权限，否则无法生成，allure不支持
+
+
+
+2、Web UI自动化测试
+
++ `cd Automation`
++ `pytest testcase/web_ui --alluredir report\web_ui\chrome --clean-alluredir` 运行测试用例
++ `python -u generate_web_ui_test_report.py -ieport 9081 -chromeport 9082 -firefoxport 9083`
+
+
+
+
 
 ## pip 安装依赖
 `https://www.lfd.uci.edu/~gohlke/pythonlibs/#jpype`
@@ -318,6 +404,7 @@ https://blog.csdn.net/yxxxiao/article/details/94591174
 19. 封装web ui 自动化框架(tag: v0.3.5)
 20. 添加web_ui 搜索测试用例(tag: v0.3.6)
 21. web UI自动化引用conftest代替setup_class以及teardown_class(tag: v0.3.7)
+22. 添加生成 web UI 测试报告 (tag: v0.3.8)
 
 
 

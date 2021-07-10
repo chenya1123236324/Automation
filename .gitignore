@@ -2,6 +2,7 @@
 __pycache__/
 venv/
 demo.py
+common/custom_multiprocessing.py
 report/
 logs/
 #common/pytest.py
