@@ -43,7 +43,7 @@ class LoginPage:
 
     def _click_login_button(self):
         self._browserOperator.click(self._loginPageElements.login_button)
-        self._browserOperator.get_screenshot('click_login__button')
+        self._browserOperator.get_screenshot('click_login_button')
 
 
     def login_page(self, username, password):

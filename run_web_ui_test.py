@@ -13,7 +13,7 @@ import sys
 
 import pytest
 import ujson
-
+from common.java.bin.seleniumServerStart import selenium_server_start
 from common.datetimeutil import DateTimeUtil
 from common.httpclient.doRequest import DoRequest
 from common.pytest import deal_pytest_ini_file
@@ -24,6 +24,7 @@ from selenium.webdriver.remote.command import Command
 from selenium.webdriver.remote.remote_connection import RemoteConnection
 
 if __name__ == '__main__':
+
     parser = argparse.ArgumentParser()
     parser.add_argument('-k', '--keyword', help='只执行匹配关键字的用例，会匹配文件名、类名、方法名', type=str)
     parser.add_argument('-d', '--dir', help='指定要测试的目录', type=str)
@@ -34,6 +35,10 @@ if __name__ == '__main__':
     parser.add_argument('-clr', '--clr', help='是否清空已有测试结果,1:是、0:否,默认为0', type=str)
     args = parser.parse_args()
 
+    # 启动selenium server服务
+    print('[%s] 开始启动 selenium server ......' % DateTimeUtil.getNowTime())
+    selenium_server_start()
+    
     print('[%s] 开始初始化......' % DateTimeUtil.getNowTime())
     print('[%s] 开始检测 selenium server 是否可用......' % DateTimeUtil.getNowTime())
 
@@ -45,8 +50,10 @@ if __name__ == '__main__':
             print('[%s] selenium server 状态为可用......' % DateTimeUtil.getNowTime())
         else:
             sys.exit('[%s] selenium server 状态为不可用' % DateTimeUtil.getNowTime())
+
     except:
         sys.exit('[%s] selenium server 状态为不可用' % DateTimeUtil.getNowTime())
+
 
     # 处理pytest文件
     deal_pytest_ini_file()

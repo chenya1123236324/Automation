@@ -11,6 +11,7 @@
 class WebUIConfig:
     def __init__(self):
         self.selenium_hub=None
+        self.selenium_hub_port=None
         self.test_workers=None
         self.test_browsers=[]
         self.current_browser=None

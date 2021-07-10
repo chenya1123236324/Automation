@@ -30,6 +30,7 @@ class ReadWebUIConfig(object):
         config.read(configFile, encoding='utf-8')
         web_ui_config = WebUIConfig()
         web_ui_config.selenium_hub = config.get('selenium_server', 'selenium_hub')
+        web_ui_config.selenium_hub_port = config.get('selenium_server_port', 'selenium_hub_port')
         web_ui_config.test_workers = config.get('test', 'test_workers')
         web_ui_config.test_browsers = config.get('browser', 'test_browsers').split('||')
         web_ui_config.current_browser = config.get('browser', 'current_browser')
