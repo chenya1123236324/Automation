@@ -21,7 +21,8 @@ common/base/app_ui
 common/baseob/app_ui
 common/baseob/httpResponseResult.py
 common/httpclient
-common/java
+common/java/javaTools.py
+common/java/lib/tess4j
 common/captchaRecognitionTool.py
 
 conf/app_ui

@@ -38,7 +38,7 @@ if __name__ == '__main__':
     # 启动selenium server服务
     print('[%s] 开始启动 selenium server ......' % DateTimeUtil.getNowTime())
     selenium_server_start()
-    
+
     print('[%s] 开始初始化......' % DateTimeUtil.getNowTime())
     print('[%s] 开始检测 selenium server 是否可用......' % DateTimeUtil.getNowTime())
 

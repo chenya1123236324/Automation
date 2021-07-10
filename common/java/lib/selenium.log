@@ -1,0 +1,432 @@
+17:14:53.413 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.0, revision: 2ecb7d9a
+17:14:53.526 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+17:14:53.841 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+17:14:54.200 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+17:16:03.124 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+17:16:03.126 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+17:16:08.375 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+17:16:08.405 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 3c602a8424328789fff1eae2f4768f41 (org.openqa.selenium.chrome.ChromeDriverService)
+17:16:11.764 INFO [ActiveSessions$1.onStop] - Removing session 3c602a8424328789fff1eae2f4768f41 (org.openqa.selenium.chrome.ChromeDriverService)
+17:19:24.653 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+17:19:24.653 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+17:19:28.005 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+17:19:28.008 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 515fca0299d06c43dfee7888e5b58fba (org.openqa.selenium.chrome.ChromeDriverService)
+17:19:36.824 INFO [ActiveSessions$1.onStop] - Removing session 515fca0299d06c43dfee7888e5b58fba (org.openqa.selenium.chrome.ChromeDriverService)
+17:22:16.564 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+17:22:16.564 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+17:22:20.154 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+17:22:20.159 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 389c59e867ba61be62b03a65b6a99bbc (org.openqa.selenium.chrome.ChromeDriverService)
+17:22:29.408 INFO [ActiveSessions$1.onStop] - Removing session 389c59e867ba61be62b03a65b6a99bbc (org.openqa.selenium.chrome.ChromeDriverService)
+17:23:56.505 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+17:23:56.506 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+17:24:00.175 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+17:24:00.177 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session c586b0a1f6220194a71e2ffb26a07124 (org.openqa.selenium.chrome.ChromeDriverService)
+17:24:29.804 INFO [ActiveSessions$1.onStop] - Removing session c586b0a1f6220194a71e2ffb26a07124 (org.openqa.selenium.chrome.ChromeDriverService)
+17:24:49.806 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+17:24:49.806 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+17:24:53.426 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+17:24:53.429 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session d92c93cd36b31c8252d392b07b83ef89 (org.openqa.selenium.chrome.ChromeDriverService)
+17:25:01.384 INFO [ActiveSessions$1.onStop] - Removing session d92c93cd36b31c8252d392b07b83ef89 (org.openqa.selenium.chrome.ChromeDriverService)
+17:29:17.823 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+17:29:17.823 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+17:29:21.268 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+17:29:21.271 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 4922aac9b1677c9e1635ca4853044f21 (org.openqa.selenium.chrome.ChromeDriverService)
+17:29:51.480 INFO [ActiveSessions$1.onStop] - Removing session 4922aac9b1677c9e1635ca4853044f21 (org.openqa.selenium.chrome.ChromeDriverService)
+17:33:41.341 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+17:33:41.341 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+17:33:44.820 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+17:33:44.824 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session c3ae82b2048ce6d5c64690abfdae7fb6 (org.openqa.selenium.chrome.ChromeDriverService)
+17:33:52.893 INFO [ActiveSessions$1.onStop] - Removing session c3ae82b2048ce6d5c64690abfdae7fb6 (org.openqa.selenium.chrome.ChromeDriverService)
+17:33:52.916 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+17:33:52.916 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+17:33:56.356 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+17:33:56.359 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session e145a56a2899b06e386f840d28041a8a (org.openqa.selenium.chrome.ChromeDriverService)
+17:34:04.639 INFO [ActiveSessions$1.onStop] - Removing session e145a56a2899b06e386f840d28041a8a (org.openqa.selenium.chrome.ChromeDriverService)
+17:59:24.939 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+17:59:24.939 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+17:59:28.755 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+17:59:28.758 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session de98057e53ded4072010602ef3f47b5e (org.openqa.selenium.chrome.ChromeDriverService)
+17:59:37.374 INFO [ActiveSessions$1.onStop] - Removing session de98057e53ded4072010602ef3f47b5e (org.openqa.selenium.chrome.ChromeDriverService)
+17:59:37.402 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+17:59:37.402 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+17:59:40.919 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+17:59:40.922 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 7f95305d7609222f12cc9465a33ee5c6 (org.openqa.selenium.chrome.ChromeDriverService)
+17:59:51.023 INFO [ActiveSessions$1.onStop] - Removing session 7f95305d7609222f12cc9465a33ee5c6 (org.openqa.selenium.chrome.ChromeDriverService)
+21:10:27.797 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+21:10:27.799 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+21:10:31.565 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+21:10:31.570 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session e0249ae9073c44735bdb5728fe7d8d5d (org.openqa.selenium.chrome.ChromeDriverService)
+21:10:40.143 INFO [ActiveSessions$1.onStop] - Removing session e0249ae9073c44735bdb5728fe7d8d5d (org.openqa.selenium.chrome.ChromeDriverService)
+21:10:40.172 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+21:10:40.172 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+21:10:43.560 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+21:10:43.563 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session f2beb7e5ab2e354a7e315a4af9d8fec0 (org.openqa.selenium.chrome.ChromeDriverService)
+21:11:14.593 INFO [ActiveSessions$1.onStop] - Removing session f2beb7e5ab2e354a7e315a4af9d8fec0 (org.openqa.selenium.chrome.ChromeDriverService)
+22:59:25.949 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+22:59:25.952 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+22:59:29.776 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+22:59:29.782 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 7819e7d2d644743e264f13bac441c3eb (org.openqa.selenium.chrome.ChromeDriverService)
+22:59:38.022 INFO [ActiveSessions$1.onStop] - Removing session 7819e7d2d644743e264f13bac441c3eb (org.openqa.selenium.chrome.ChromeDriverService)
+22:59:38.058 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+22:59:38.059 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+22:59:42.223 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+22:59:42.228 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session f9c1c0e8be90589b56891e1562736d4a (org.openqa.selenium.chrome.ChromeDriverService)
+23:00:12.220 INFO [ActiveSessions$1.onStop] - Removing session f9c1c0e8be90589b56891e1562736d4a (org.openqa.selenium.chrome.ChromeDriverService)
+23:08:31.631 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+23:08:31.631 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+23:08:35.119 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+23:08:35.122 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session cafc7af83462cf79281e0164449e1837 (org.openqa.selenium.chrome.ChromeDriverService)
+23:08:59.353 INFO [ActiveSessions$1.onStop] - Removing session cafc7af83462cf79281e0164449e1837 (org.openqa.selenium.chrome.ChromeDriverService)
+23:08:59.405 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+23:08:59.406 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+23:09:03.621 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+23:09:03.624 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 182f4870af35473edd1a83347f9ae97a (org.openqa.selenium.chrome.ChromeDriverService)
+23:09:34.544 INFO [ActiveSessions$1.onStop] - Removing session 182f4870af35473edd1a83347f9ae97a (org.openqa.selenium.chrome.ChromeDriverService)
+23:11:34.557 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+23:11:34.557 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+23:11:38.184 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+23:11:38.187 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 3359b558dc478fdb14ee19f481a65a0b (org.openqa.selenium.chrome.ChromeDriverService)
+23:11:46.144 INFO [ActiveSessions$1.onStop] - Removing session 3359b558dc478fdb14ee19f481a65a0b (org.openqa.selenium.chrome.ChromeDriverService)
+23:11:46.166 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+23:11:46.166 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+23:11:49.668 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+23:11:49.671 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 91432b644886f579a8dcf0feb38e968f (org.openqa.selenium.chrome.ChromeDriverService)
+23:12:20.751 INFO [ActiveSessions$1.onStop] - Removing session 91432b644886f579a8dcf0feb38e968f (org.openqa.selenium.chrome.ChromeDriverService)
+23:36:49.352 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+23:36:49.352 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+23:36:53.549 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+23:36:53.552 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session b943e77310f5d780fbb9640e55c80a71 (org.openqa.selenium.chrome.ChromeDriverService)
+23:37:01.557 INFO [ActiveSessions$1.onStop] - Removing session b943e77310f5d780fbb9640e55c80a71 (org.openqa.selenium.chrome.ChromeDriverService)
+23:37:01.580 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+23:37:01.581 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+23:37:05.037 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+23:37:05.039 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session ddd323e1f05cb98e09a5e2aff762e1be (org.openqa.selenium.chrome.ChromeDriverService)
+23:37:15.512 INFO [ActiveSessions$1.onStop] - Removing session ddd323e1f05cb98e09a5e2aff762e1be (org.openqa.selenium.chrome.ChromeDriverService)
+00:37:59.540 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.0, revision: 2ecb7d9a
+00:37:59.647 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+00:37:59.978 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+00:38:00.255 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+00:52:38.978 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.0, revision: 2ecb7d9a
+00:52:39.097 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+00:52:39.446 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+00:52:39.756 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+00:56:29.280 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.0, revision: 2ecb7d9a
+00:56:29.388 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+00:56:29.707 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+00:56:29.984 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+00:56:48.741 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.0, revision: 2ecb7d9a
+00:56:48.849 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+00:56:49.188 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+00:56:49.531 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+00:57:09.861 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.0, revision: 2ecb7d9a
+00:57:09.969 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+00:57:10.284 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+00:57:10.564 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+01:00:29.073 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.0, revision: 2ecb7d9a
+01:00:29.189 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+01:00:29.534 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+01:00:29.871 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+01:10:51.508 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.0, revision: 2ecb7d9a
+01:10:51.611 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+01:10:51.921 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+01:10:52.160 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+01:17:31.825 INFO [GridLauncherV3.parse] - Selenium server version: 3.141.0, revision: 2ecb7d9a
+01:17:31.932 INFO [GridLauncherV3.lambda$buildLaunchers$3] - Launching a standalone Selenium Server on port 4444
+01:17:32.250 INFO [WebDriverServlet.<init>] - Initialising WebDriverServlet
+01:17:32.501 INFO [SeleniumServer.boot] - Selenium Server is up and running on port 4444
+01:17:33.476 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+01:17:33.477 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+01:17:37.748 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+01:17:37.825 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 0c1001bddfeeac9d89dce3fec2940147 (org.openqa.selenium.chrome.ChromeDriverService)
+01:17:48.390 INFO [ActiveSessions$1.onStop] - Removing session 0c1001bddfeeac9d89dce3fec2940147 (org.openqa.selenium.chrome.ChromeDriverService)
+01:17:48.420 INFO [ActiveSessionFactory.apply] - Capabilities are: {
+  "browserName": "chrome",
+  "goog:chromeOptions": {
+    "prefs": {
+      "download.default_directory": "\u002froot\u002fDownloads\u002f",
+      "profile.default_content_settings.popups": 0
+    },
+    "extensions": [
+    ],
+    "args": [
+    ]
+  },
+  "version": ""
+}
+01:17:48.420 INFO [ActiveSessionFactory.lambda$apply$11] - Matched factory org.openqa.selenium.grid.session.remote.ServicedSession$Factory (provider: org.openqa.selenium.chrome.ChromeDriverService)
+01:17:51.762 INFO [ProtocolHandshake.createSession] - Detected dialect: W3C
+01:17:51.765 INFO [RemoteSession$Factory.lambda$performHandshake$0] - Started new session 05439cf2388fba1b3db70e9b3895327e (org.openqa.selenium.chrome.ChromeDriverService)
+01:18:04.626 INFO [ActiveSessions$1.onStop] - Removing session 05439cf2388fba1b3db70e9b3895327e (org.openqa.selenium.chrome.ChromeDriverService)
