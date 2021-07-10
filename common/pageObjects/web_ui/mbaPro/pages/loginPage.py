@@ -31,15 +31,15 @@ class LoginPage:
 
     def _input_login_username(self, username):
         self._browserOperator.sendText(self._loginPageElements.login_username, username)
-        # self._browserOperator.get_screenshot('input_username')
+        self._browserOperator.get_screenshot('input_username')
 
     def _input_login_password(self, password):
         self._browserOperator.sendText(self._loginPageElements.login_password, password)
-        #self._browserOperator.get_screenshot('input_password')
+        self._browserOperator.get_screenshot('input_password')
 
     def _click_login_agreement(self):
         self._browserOperator.click(self._loginPageElements.login_agreement)
-        #self._browserOperator.get_screenshot('click_login_agreement_button')
+        self._browserOperator.get_screenshot('click_login_agreement_button')
 
     def _click_login_button(self):
         self._browserOperator.click(self._loginPageElements.login_button)

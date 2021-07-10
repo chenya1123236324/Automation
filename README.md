@@ -405,6 +405,7 @@ https://blog.csdn.net/yxxxiao/article/details/94591174
 20. 添加web_ui 搜索测试用例(tag: v0.3.6)
 21. web UI自动化引用conftest代替setup_class以及teardown_class(tag: v0.3.7)
 22. 添加生成 web UI 测试报告 (tag: v0.3.8)
+23. 异步调用启动selenium server服务(tag: v0.3.9)
 
 
 
