@@ -34,32 +34,32 @@ if __name__ == '__main__':
     parser.add_argument('-clr', '--clr', help='是否清空已有测试结果,1:是、0:否,默认为0', type=str)
     args = parser.parse_args()
 
-    print('%s开始初始化......' % DateTimeUtil.getNowTime())
-    print('%s开始检测selenium server是否可用......' % DateTimeUtil.getNowTime())
+    print('[%s] 开始初始化......' % DateTimeUtil.getNowTime())
+    print('[%s] 开始检测 selenium server 是否可用......' % DateTimeUtil.getNowTime())
 
     try:
         doRquest=DoRequest(ReadWebUIConfig().web_ui_config.selenium_hub)
         httpResponseResult=doRquest.get('/status')
         result=ujson.loads(httpResponseResult.body)
         if result['status']==0:
-            print('%sselenium server状态为可用......'% DateTimeUtil.getNowTime())
+            print('[%s] selenium server 状态为可用......' % DateTimeUtil.getNowTime())
         else:
-            sys.exit('%sselenium server状态为不可用'% DateTimeUtil.getNowTime())
+            sys.exit('[%s] selenium server 状态为不可用' % DateTimeUtil.getNowTime())
     except:
-        sys.exit('%sselenium server状态为不可用'% DateTimeUtil.getNowTime())
+        sys.exit('[%s] selenium server 状态为不可用' % DateTimeUtil.getNowTime())
 
     # 处理pytest文件
     deal_pytest_ini_file()
 
-    print('%s初始化基础数据......'% DateTimeUtil.getNowTime())
+    print('[%s] 初始化基础数据......'% DateTimeUtil.getNowTime())
     web_ui_init()
-    print('%s初始化基础数据完成......'% DateTimeUtil.getNowTime())
-    print('%s初始化完成......'% DateTimeUtil.getNowTime())
+    print('[%s] 初始化基础数据完成......'% DateTimeUtil.getNowTime())
+    print('[%s] 初始化完成......'% DateTimeUtil.getNowTime())
 
-    print('%s开始测试......' % DateTimeUtil.getNowTime())
+    print('[%s] 开始测试......' % DateTimeUtil.getNowTime())
     exit_code = 0
     for current_browser in ReadWebUIConfig().web_ui_config.test_browsers:
-        print('%s开始%s浏览器测试......' % (DateTimeUtil.getNowTime(), current_browser))
+        print('[%s] 开始【%s】浏览器测试......' % (DateTimeUtil.getNowTime(), current_browser))
         # 由于pytest的并发插件xdist采用子进程形式，当前主进程的单例在子进程中会重新创建，所以将每次要测试的浏览器信息写入到文件中，
         # 保证子进程能够正确读取当前要测试的浏览器
         FileUtil.replaceFileContent('conf/web_ui_config.conf', '\r\n', '\n')
@@ -105,9 +105,9 @@ if __name__ == '__main__':
         tmp_exit_code = pytest.main(pytest_execute_params)
         if not tmp_exit_code == 0:
             exit_code = tmp_exit_code
-        print('%s结束%s浏览器测试......' % (DateTimeUtil.getNowTime(), current_browser))
+        print('[%s] 结束【%s】浏览器测试......' % (DateTimeUtil.getNowTime(), current_browser))
 
-    print('%s清除未被关闭的浏览器......' % DateTimeUtil.getNowTime())
+    print('[%s] 清除未被关闭的浏览器......' % DateTimeUtil.getNowTime())
     try:
         conn = RemoteConnection(ReadWebUIConfig().web_ui_config.selenium_hub, True)
         sessions = conn.execute(Command.GET_ALL_SESSIONS, None)
@@ -116,7 +116,7 @@ if __name__ == '__main__':
             session_id = session['id']
             conn.execute(Command.QUIT, {'sessionId': session_id})
     except Exception as e:
-        print('%s清除未关闭浏览器异常:\r\n%s' % (DateTimeUtil.getNowTime(), e.args.__str__()))
-    print('%s清除未被关闭的浏览器完成......' % DateTimeUtil.getNowTime())
+        print('[%s] 清除未关闭浏览器异常:\r\n %s' % (DateTimeUtil.getNowTime(), e.args.__str__()))
+    print('[%s] 清除未被关闭的浏览器完成......' % DateTimeUtil.getNowTime())
 
-    print('%s结束测试......' % DateTimeUtil.getNowTime())
+    print('[%s] 结束测试......' % DateTimeUtil.getNowTime())

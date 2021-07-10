@@ -28,9 +28,9 @@ if __name__ == '__main__':
     deal_pytest_ini_file()
 
     # 初始化
-    print('%s开始初始化......' % DateTimeUtil.getNowTime())
+    print('[%s] 开始初始化......' % DateTimeUtil.getNowTime())
     api_init()
-    print('%s初始化完成......' % DateTimeUtil.getNowTime())
+    print('[%s] 初始化完成......' % DateTimeUtil.getNowTime())
 
     # 执行pytest前的参数准备
     pytest_execute_params = ['-c', 'conf/pytest.ini', '-v', '--alluredir', 'report/tempdata/']
@@ -62,5 +62,5 @@ if __name__ == '__main__':
             pytest_execute_params.append('--clean-alluredir')
     pytest_execute_params.append(dir)
 
-    print('%s开始测试......' % DateTimeUtil.getNowTime())
+    print('[%s] 开始测试......' % DateTimeUtil.getNowTime())
     exit_code = pytest.main(pytest_execute_params)

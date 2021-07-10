@@ -17,17 +17,26 @@ export PATH=${JAVA_HOME}/bin:$PATH
 ```
 ##### 1.2 安装配置selenium
 +   配置selenium server
-    +   下载selenium-server-standalone-3.141.0.jar
-    +   下载地址:http://selenium-release.storage.googleapis.com/index.html
+    + 下载selenium-server-standalone-3.141.0.jar
+    
+    + 下载地址:http://selenium-release.storage.googleapis.com/index.html
+    
     +   以管理员身份启动服务:
         `java -jar selenium-server-standalone-3.141.0.jar -log selenium.log`
+        
+    +   浏览器访问
+        
+        `http://192.168.1.101:4444/wd/hub (本地IP地址 >> cmd >> ipconfig)`
 +   下载浏览器驱动
-    +   谷歌浏览器：http://chromedriver.storage.googleapis.com/index.html
+    +   谷歌浏览器：http://chromedriver.storage.googleapis.com/index.html 或者 http://npm.taobao.org/mirrors/chromedriver/
     +   火狐浏览器：https://github.com/mozilla/geckodriver/
+        
         +   驱动支持的最低浏览器版本：https://firefox-source-docs.mozilla.org/testing/geckodriver/Support.html
     +   将驱动所在目录加入到selenium server服务器系统环境变量:
         +   export PATH=/home/john/selenium/:$PATH
         +   或者直接放在python目录下即可
+        
+        
 
 
 执行前创建目录 logs，report/,report/tempdata, report/html
@@ -251,21 +260,21 @@ def login():
 ```
 
 
-```
 ## 运行测试
 1、API测试
 
-+   cd Automation
-+   python -u run_api_test.py --help
-+   python -u run_api_test.py 运行testcase/api/目录所有的用例
-+   python -u run_api_test.py -k keyword 运行匹配关键字的用例，会匹配文件名、类名、方法名
-+   python -u run_api_test.py -d dir 运行指定目录的用例，默认运行cases/api/目录
-+   python -u run_api_test.py -m mark 运行指定标记的用例
++   `cd Automation`
++   `python -u run_api_test.py --help`
++   `python -u run_api_test.py` 运行testcase/api/目录所有的用例
++   `python -u run_api_test.py -k keyword` 运行匹配关键字的用例，会匹配文件名、类名、方法名
++   `python -u run_api_test.py -d dir` 运行指定目录的用例，默认运行cases/api/目录
++   `python -u run_api_test.py -m mark` 运行指定标记的用例
 
 2、Web UI测试
-+	cd Automation
-+	python -u run_web_ui_test.py --help
-+	python -u run_web_ui_test.py 运行testcase/web_ui/目录所有的用例
++	`cd Automation`
++	`python -u run_web_ui_test.py --help`
++	`python -u run_web_ui_test.py` 运行testcase/web_ui/目录所有的用例
++	`python -u run_web_ui_test.py -k TestLogin` 运行匹配`TestLogin`的类名
 
 https://blog.csdn.net/yxxxiao/article/details/94591174
 
@@ -273,13 +282,15 @@ https://blog.csdn.net/yxxxiao/article/details/94591174
 
 1、API测试
 
-+   cd Automation
-+   pytest testcase/api --alluredir report\tempdata --clean-alluredir 运行测试用例
-+   python3 -u generate_api_test_report.py -p 9080
++   `cd Automation`
++   `pytest testcase/api --alluredir report\tempdata --clean-alluredir` 运行测试用例
++   `python3 -u generate_api_test_report.py -p 9080`
 +   在使用Ubuntu进行报告生成时，请勿使用sudo权限，否则无法生成，allure不支持
 
 ## pip 安装依赖
 `https://www.lfd.uci.edu/~gohlke/pythonlibs/#jpype`
+
+```python
 
 ## 提交记录
 1. 生成requirements.txt依赖文件
@@ -305,10 +316,36 @@ https://blog.csdn.net/yxxxiao/article/details/94591174
 17. 自动打开浏览器查看测试报告(tag: v0.3.3)
 18. 整合并管理项目(tag: v0.3.4)
 19. 封装web ui 自动化框架(tag: v0.3.5)
-
-
-
+20. 添加web_ui 搜索测试用例(tag: v0.3.6)
+21. web UI自动化引用conftest代替setup_class以及teardown_class(tag: v0.3.7)
 
 
 
 ```
+
+## 问题记录
++   Message: session not created: This version of ChromeDriver only supports Chrome version 83
+
+```python
+chrome版本问题，由于浏览器自动更新了，所以驱动chromedrive版本也要同步
+```
+
++ selenium.common.exceptions.WebDriverException: Message: No active session with ID 4922aac9b1677c9e1635ca4853044f21
+
+  ```python
+  # 在运行所有的web UI自动化测试用例 --> python -u run_web_ui_test.py
+  # testcase/web_ui/conftest.py 以及 testcase/web_ui/mbaPro/conftest.py 定义的 start_module、start_session(所有模块只打开一次浏览器)，因为在设计用例时每个模块都要打开一次浏览器，导致chromedriver的session ID不兼容
+  
+  # 解决方案：采用每个按照模块级别运行测试用例即可
+  import pytest
+  @pytest.mark.usefixtures('start_module')
+  class TestSearch:
+      def test_demo01(self, start_module):
+          # start_module[0] => project_module_start[1] => proClient.browserOperator
+          # start_module[1] => lg => LoginPage(driver)
+          ...
+  ```
+
+  
+
++ next ...

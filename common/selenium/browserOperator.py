@@ -23,7 +23,7 @@ class BrowserOperator:
     类中的element参数可以有selenium.webdriver.remote.webelement.WebElement和pojo.elementInfo.ElementInfo类型
     """
 
-    def __init__(self,driver):
+    def __init__(self, driver):
         self._config = ReadWebUIConfig().web_ui_config
         self._driver=driver
 
