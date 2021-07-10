@@ -10,10 +10,141 @@
 '''
 import os
 import re
+import time
+from typing import Text, List
 import ujson as ujson
+from common.exceptions import FolderNotFound
+
+
+def get_base_dir():
+    """获取根目录"""
+    base_path_temp = os.path.abspath(os.path.join(os.path.dirname(__file__), "../"))
+    root_dir = base_path_temp.replace(r'\/'.replace(os.sep, ''), os.sep)
+    return root_dir
+
+def clear_file(dir_path):
+    """
+    清除目录以及子目录下的文件
+    :param dir_path: 路径
+    :return: None
+    """
+    if os.path.exists(dir_path) and os.path.isdir(dir_path):
+        # 获取目录下文件和文件夹列表
+        ls = os.listdir(dir_path)
+        # 删除目录下的所有文件及子目录下的所有文件
+        for i in ls:
+            c_path = os.path.join(dir_path, i)  # 将目录和文件名拼接
+            if os.path.isdir(c_path):  # 如果是目录继续调用清除函数
+                clear_file(c_path)
+            else:
+                os.remove(c_path)
+
+    else:
+        raise NameError('路径不存在或者不是一个目录')
+
+def clear_log(dir_path):
+    """
+    清空一天前生成的log
+    :param dir_path: 目录路径
+    :return: None
+    """
+    now_time = time.time()  # 获取现在时间戳
+    if os.path.exists(dir_path) and os.path.isdir(dir_path):  # 判断路径是目录并且路径下有文件或者目录
+        ls = os.listdir(dir_path)
+        for i in ls:
+            c_path = os.path.join(dir_path, i)  # 将目录和文件名拼接
+            if os.path.isdir(c_path):
+                clear_log(c_path)
+            else:
+                cre_time = os.path.getmtime(c_path)  # 获取文件创建时间戳
+                if cre_time < (now_time - 86400):  # 删除符合条件文件
+                    os.remove(c_path)
+    else:
+        raise NameError('路径不存在或者不是一个目录')
 
 
 class FileUtil:
+
+    @staticmethod
+    def load_folder_files(folderPath: Text, recursive: bool = True) -> List:
+        '''
+
+        :param folderPath:
+        :param recursive: 是否递归(是否加载下级目录文件)
+        :return: file_list >>> 文件路径 ; fileList>>> 文件名
+        '''
+        if not os.path.isdir(folderPath):
+            raise FolderNotFound(u"Folder does not exist \"{}\"".format(folderPath))
+
+        if isinstance(folderPath, (list, set)):
+            files = []
+            for path in set(folderPath):
+                files.extend(FileUtil.load_folder_files(path, recursive))
+            return files
+        if not os.path.exists(folderPath):
+            raise FolderNotFound(u"Folder does not exist \"{}\"".format(folderPath))
+        file_list = []
+        # fileList = []
+        for dirPath, dirNames, fileNames in os.walk(folderPath):
+            fileNames_list = []
+            for fileName in fileNames:
+                # 过滤掉yaml文件和json文件
+                if not fileName.endswith(('.yml', '.yaml', '.json', '.txt', '.xlsx')):
+                    continue
+                fileNames_list.append(fileName)
+                # fileList.append(fileName)
+            for fileName in fileNames_list:
+                filePath = os.path.join(dirPath, fileName)
+                file_list.append(filePath)
+            if not recursive:
+                break
+        return file_list
+
+    @staticmethod
+    def load_sub_folder(folderPath: Text) -> List:
+        files_list = []
+        folder_files = os.listdir(folderPath)
+        for i in range(0, len(folder_files)):
+            path = os.path.join(folderPath, folder_files[i])
+            if os.path.isdir(path):
+                files_list.extend(FileUtil.load_sub_folder(path))
+            if os.path.isfile(path):
+                files_list.append(path)
+        return files_list
+
+    @staticmethod
+    def load_file_name(filePath: Text, recursive: bool = False) -> List:
+        '''
+            获取目录 或者 文件的文件名
+        :param filePath: 目录路径 或者 文件路径
+        :param recursive: 是否递归下级目录 True > 递归
+        :return:
+        '''
+        # 路径 文件  文件夹
+        result = []
+        if os.path.isdir(filePath):
+            files = FileUtil.load_folder_files(filePath, recursive=recursive)
+            for file in files:
+                data = os.path.splitext(file)[0]
+                if '\\' in data:
+                    temp = data.rsplit('\\', 1)[1]
+                else:
+                    temp = data.rsplit('/', 1)[1]
+                result.append(temp)
+        if os.path.isfile(filePath):
+            # 文件带路径
+            if '\\' in filePath:
+                data = filePath.rsplit('\\', 1)[1]
+                temp = data.rsplit('.', 1)[0]
+                result.append(temp)
+            elif '/' in filePath:
+                data = filePath.rsplit('/', 1)[1]
+                print(data)
+                temp = data.rsplit('.', 1)[0]
+                print(temp)
+                result.append(temp)
+
+        return result
 
     @classmethod
     def replaceFileLineContent(cls, filePath, match_keyword, old, new, encoding='utf-8'):
